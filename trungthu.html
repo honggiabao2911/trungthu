@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thiệp Trung Thu 2025 🎑</title>
+  <meta name="description" content="Thiệp Trung Thu xinh xắn để gửi bạn bè – có đếm ngược, lời chúc, lồng đèn bay và nhạc nhẹ."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0b1e;        /* đêm xanh sẫm */
+      --moon:#ffe89a;      /* vàng trăng */
+      --lantern:#ff865e;   /* đỏ cam */
+      --accent:#f6c860;    /* nhấn vàng */
+      --text:#f6f8ff;      /* chữ sáng */
+      --muted:#b9c2ff;     /* chữ phụ */
+      --card:#12143a99;    /* thẻ mờ */
+      --glass:rgba(255,255,255,.08);
+      --blur:10px;
+      --radius:22px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 70% -10%, #1b1e4f 0%, #0c0f2e 32%, var(--bg) 100%) no-repeat fixed;
+      overflow-x:hidden;
+    }
+    header{
+      position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;padding:80px 20px 40px
+    }
+    .container{width:min(1100px,92vw);margin:0 auto}
+    .hero{
+      position:relative;z-index:2;text-align:center
+    }
+    h1{
+      font-family:"Playfair Display", serif;font-size:clamp(36px,6vw,64px);margin:0 0 10px;letter-spacing:.5px
+    }
+    .subtitle{color:var(--muted);font-size:clamp(14px,2.4vw,18px)}
+
+    /* Moon */
+    .moon{position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fff6cc, var(--moon)); top:8vh; right:6vw; box-shadow:0 0 40px 10px rgba(255,232,154,.35)}
+    .crater{position:absolute;background:rgba(0,0,0,.09);border-radius:50%}
+    .crater.c1{width:40px;height:40px;left:40px;top:60px}
+    .crater.c2{width:22px;height:22px;left:95px;top:30px}
+    .crater.c3{width:26px;height:26px;left:115px;top:95px}
+
+    /* Stars */
+    .stars{position:absolute;inset:0;pointer-events:none}
+    .stars span{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.75;animation:twinkle 4s infinite ease-in-out}
+    @keyframes twinkle{50%{opacity:.2;transform:scale(.9)} }
+
+    /* Floating lanterns */
+    .lanterns{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .lantern{position:absolute;bottom:-120px;width:32px;height:44px;background:linear-gradient(#ffb07f, var(--lantern));border-radius:8px;box-shadow:0 0 18px 6px rgba(255,134,94,.55);animation:rise linear infinite}
+    .lantern::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:10px;height:10px;background:#ffd8a8;border-radius:50%;filter:blur(2px)}
+    @keyframes rise{to{transform:translateY(-120vh) translateX(-20px) rotate(-3deg)}}
+
+    /* Glass cards */
+    .card{background:linear-gradient( to bottom right, var(--glass), transparent ); backdrop-filter:blur(var(--blur)); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); box-shadow:var(--shadow)}
+
+    .panel{display:grid;gap:16px;grid-template-columns:1fr; margin-top:28px}
+    .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+    /* Inputs */
+    label{font-weight:600; font-size:14px; color:var(--muted)}
+    input,textarea{width:100%; padding:12px 14px; color:var(--text); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); border-radius:14px; outline:none}
+    textarea{min-height:88px; resize:vertical}
+    .controls{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    button{cursor:pointer; border:0; padding:12px 16px; font-weight:700; border-radius:14px}
+    .btn-primary{background:linear-gradient(135deg,#ffb84d,#ff7a5a); color:#2a1200}
+    .btn-ghost{background:rgba(255,255,255,.08); color:var(--text)}
+
+    /* Countdown */
+    .countdown{display:flex;justify-content:center;gap:16px;margin:20px 0 10px}
+    .tile{min-width:86px; padding:12px 8px; text-align:center}
+    .tile h3{font-size:28px;margin:0 0 4px}
+    .tile p{margin:0;color:var(--muted);font-size:12px;letter-spacing:.6px}
+
+    /* Wish card */
+    .wish-card{margin:28px auto 0;max-width:720px;padding:18px}
+    .wish-card h2{font-family:"Playfair Display",serif;margin:8px 0 6px;font-size:28px}
+    .meta{color:var(--accent); font-weight:700}
+
+    /* Footer */
+    footer{padding:50px 20px 60px;text-align:center;color:var(--muted)}
+
+    /* Audio control */
+    .audio-toggle{position:fixed; left:16px; bottom:16px; z-index:50}
+
+    /* Responsive */
+    @media (min-width:760px){
+      .panel{grid-template-columns:1.2fr .8fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="moon" aria-hidden="true">
+      <span class="crater c1"></span>
+      <span class="crater c2"></span>
+      <span class="crater c3"></span>
+    </div>
+    <div class="stars" id="stars"></div>
+    <div class="lanterns" id="lanterns"></div>
+    <div class="container hero">
+      <h1>Trung Thu 2025 🎑</h1>
+      <p class="subtitle">Gửi đến <span id="toName" class="meta">bạn của mình</span> đôi lời thân thương. Chúc một mùa trăng an yên, sum vầy và thật ngọt ngào.</p>
+
+      <div class="countdown" id="countdown">
+        <div class="card tile"><h3 id="d">0</h3><p>Ngày</p></div>
+        <div class="card tile"><h3 id="h">0</h3><p>Giờ</p></div>
+        <div class="card tile"><h3 id="m">0</h3><p>Phút</p></div>
+        <div class="card tile"><h3 id="s">0</h3><p>Giây</p></div>
+      </div>
+
+      <div class="panel">
+        <div class="card" style="padding:18px">
+          <div class="row">
+            <div style="flex:1;min-width:220px">
+              <label for="name">Tên người nhận</label>
+              <input id="name" placeholder="Ví dụ: Hồng Gia Bảo"/>
+            </div>
+            <div style="flex:1;min-width:220px">
+              <label for="from">Tên bạn (người gửi)</label>
+              <input id="from" placeholder="Tên của bạn"/>
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <label for="msg">Lời chúc</label>
+            <textarea id="msg" placeholder="Viết vài lời chúc dễ thương...">Chúc bạn có một đêm Trung Thu thật tròn đầy: bánh ngon, đèn lung linh, nụ cười rộn ràng và điều ước đều thành hiện thực ✨</textarea>
+          </div>
+          <div class="controls" style="margin-top:10px">
+            <button class="btn-primary" id="apply">Cập nhật thiệp</button>
+            <button class="btn-ghost" id="share">Chia sẻ/ Sao chép</button>
+          </div>
+        </div>
+        <div class="card wish-card" id="cardView">
+          <p class="meta">Thiệp Trung Thu</p>
+          <h2>Gửi <span id="cardTo">bạn của mình</span>,</h2>
+          <p id="cardMsg">Chúc bạn có một đêm Trung Thu thật tròn đầy: bánh ngon, đèn lung linh, nụ cười rộn ràng và điều ước đều thành hiện thực ✨</p>
+          <p style="margin-top:16px">— <span id="cardFrom">mình</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <footer>
+    <div class="container">
+      <p>Đêm rằm tháng 8 năm 2025: <strong>06/10/2025</strong>. Chúc Trung Thu an yên! 🌕</p>
+      <p style="opacity:.8">Bạn có thể thay đổi tên và lời chúc rồi bấm <em>Cập nhật thiệp</em>, sau đó dùng <em>Chia sẻ/ Sao chép</em> để gửi cho bạn bè.</p>
+    </div>
+  </footer>
+
+  <!-- Nhạc nền dịu nhẹ (tuỳ chọn) -->
+  <audio id="bgm" src="trungthu.mp3" preload="none" loop></audio>
+  <button class="audio-toggle btn-ghost" id="toggleAudio">Bật nhạc 🎵</button>
+
+  <script>
+    // ======= Cấu hình =======
+    const TARGET_DATE = new Date('2025-10-06T00:00:00+07:00'); // Trung Thu 2025 (VN)
+
+    // ======= Sao bầu trời =======
+    const stars = document.getElementById('stars');
+    for(let i=0;i<120;i++){
+      const sp = document.createElement('span');
+      sp.style.left = Math.random()*100 + 'vw';
+      sp.style.top = Math.random()*100 + 'vh';
+      sp.style.animationDelay = (Math.random()*4)+'s';
+      sp.style.opacity = Math.random()*0.9 + 0.1;
+      stars.appendChild(sp);
+    }
+
+    // ======= Đèn lồng bay =======
+    const lanterns = document.getElementById('lanterns');
+    for(let i=0;i<16;i++){
+      const L = document.createElement('div');
+      L.className = 'lantern';
+      L.style.left = (Math.random()*100)+'vw';
+      const dur = 16 + Math.random()*14;
+      L.style.animationDuration = dur+'s';
+      L.style.opacity = 0.55 + Math.random()*0.35;
+      lanterns.appendChild(L);
+    }
+
+    // ======= Đếm ngược =======
+    const dEl = document.getElementById('d');
+    const hEl = document.getElementById('h');
+    const mEl = document.getElementById('m');
+    const sEl = document.getElementById('s');
+    function tick(){
+      const now = new Date();
+      const diff = TARGET_DATE - now;
+      if(diff <= 0){ dEl.textContent=hEl.textContent=mEl.textContent=sEl.textContent='0'; return; }
+      const d = Math.floor(diff/86400000);
+      const h = Math.floor((diff%86400000)/3600000);
+      const m = Math.floor((diff%3600000)/60000);
+      const s = Math.floor((diff%60000)/1000);
+      dEl.textContent=d; hEl.textContent=h; mEl.textContent=m; sEl.textContent=s;
+    }
+    tick(); setInterval(tick, 1000);
+
+    // ======= Form -> Card =======
+    const nameIn = document.getElementById('name');
+    const fromIn = document.getElementById('from');
+    const msgIn  = document.getElementById('msg');
+    const toName = document.getElementById('toName');
+    const cardTo = document.getElementById('cardTo');
+    const cardFrom = document.getElementById('cardFrom');
+    const cardMsg  = document.getElementById('cardMsg');
+
+    document.getElementById('apply').addEventListener('click', ()=>{
+      const to = (nameIn.value||'bạn của mình').trim();
+      const fr = (fromIn.value||'mình').trim();
+      const ms = (msgIn.value||'Chúc Trung Thu thật an vui!').trim();
+      toName.textContent = to; cardTo.textContent = to; cardFrom.textContent = fr; cardMsg.textContent = ms;
+      burstConfetti();
+    });
+
+    // ======= Chia sẻ/ Sao chép =======
+    document.getElementById('share').addEventListener('click', async ()=>{
+      const to = cardTo.textContent; const fr = cardFrom.textContent; const ms = cardMsg.textContent;
+      const payload = `Thiệp Trung Thu 2025\nGửi ${to},\n${ms}\n— ${fr}`;
+      try{
+        if(navigator.share){
+          await navigator.share({title:'Thiệp Trung Thu 2025', text:payload});
+        }else{
+          await navigator.clipboard.writeText(payload);
+          alert('Đã sao chép lời chúc vào clipboard. Dán để gửi cho bạn nhé!');
+        }
+      }catch(e){
+        alert('Không thể chia sẻ tự động, nhưng bạn có thể sao chép nội dung thiệp bên dưới.');
+      }
+    });
+
+    // ======= Nhạc nền =======
+    const audio = document.getElementById('bgm');
+    const toggleBtn = document.getElementById('toggleAudio');
+    let playing = false;
+    toggleBtn.addEventListener('click', async ()=>{
+      try{
+        if(!playing){ await audio.play(); toggleBtn.textContent='Tắt nhạc 🔇'; }
+        else{ audio.pause(); toggleBtn.textContent='Bật nhạc 🎵'; }
+        playing = !playing;
+      }catch(e){ alert('Trình duyệt chặn tự động phát, hãy chạm lại để bật nhạc.'); }
+    });
+
+    // ======= Confetti nhẹ nhàng =======
+    function burstConfetti(){
+      const count = 50;
+      for(let i=0;i<count;i++){
+        const p = document.createElement('span');
+        p.style.position='fixed';
+        p.style.left=(window.innerWidth/2 + (Math.random()*120-60))+'px';
+        p.style.top=(window.innerHeight/2 + (Math.random()*40-20))+'px';
+        p.style.width=p.style.height='6px';
+        p.style.background=['#ffd166','#ef476f','#06d6a0','#118ab2','#ff9f1c'][Math.floor(Math.random()*5)];
+        p.style.borderRadius='2px';
+        p.style.pointerEvents='none';
+        p.style.zIndex=60;
+        const dx = (Math.random()*2-1)*6;
+        const dy = (Math.random()*-10-4);
+        let x = 0, y = 0, a = 0;
+        const life = 900 + Math.random()*600;
+        const start = performance.now();
+        function anim(t){
+          const dt = t - start; if(dt>life){p.remove();return;}
+          x += dx; y += dy + 0.25; a += 10; // nhẹ
+          p.style.transform = `translate(${x}px, ${y}px) rotate(${a}deg)`;
+          requestAnimationFrame(anim);
+        }
+        document.body.appendChild(p);
+        requestAnimationFrame(anim);
+      }
+    }
+  </script>
+</body>
+</html>
